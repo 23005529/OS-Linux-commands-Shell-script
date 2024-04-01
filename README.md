@@ -1431,7 +1431,11 @@ done
 $ chmod 777 argshift.sh
 ## OUTPUT
 $ ./argshift.sh 1 2 3
- 
+ ```
+1
+2
+3
+```
 cat argshift.sh
 ```bash
 #!/bin/bash 
@@ -1444,7 +1448,22 @@ set +x
 ```
 ## OUTPUT
  ./argshift.sh 1 2 3
- 
+ ```
++ ((  3  ))
++ echo 1 
+1
++ shift
++ ((  2  ))
++ echo 2
+2
++ shift
++ ((  1  ))
++ echo 3
++ shift
++ ((  0  ))
++ set +x
+
+```
  
 cat > nc.awk
 ```bash
@@ -1475,7 +1494,21 @@ ubcdfghj
 ```
 awk -f nc.awk data.dat
 ## OUTPUT 
- 
+```
+7     bcdfghj
+8	  abcdfghj
+7	  bcdfghj
+8  	  ebcdfghj
+7	  bcdfghhj
+8	  ibcdfghj
+7	  bcdfghj
+8	  obcdfghj
+7	  bcdfghj
+8 	  ubcdfghj
+total characters 75
+Number of Lines are 10
+No of Words count: 10
+```
 cat > palindrome.sh
 ```bash
 #num=545
@@ -1502,7 +1535,21 @@ else
 fi
 ```
 ## OUTPUT 
-
+```
+locathost:~# chmod 755 palindrome.sh
+locathost:~# ./palindrome.sh
+Enter the number
+34
+Number is NOT palindrome
+```
+```
+locathost:~# chmod 755 palindrome.sh
+locathost:~# ./palindrome.sh
+Enter the number
+44
+Number is palindrome
+locathost:~#
+```
 
 # RESULT:
 The Commands are executed successfully.
